@@ -50,7 +50,6 @@ export default function (defaultLibraryName) {
             path = `${libraryName}/${libDir}/${styleLibraryName}/${camel2Dash(methodName)}.css`;
           }
 
-          file.addImport(`${libraryName}/${libDir}/${styleLibraryName}/base.css`, 'default');
           file.addImport(path, 'default');
         } else {
           if (style === true) {
