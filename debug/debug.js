@@ -3,7 +3,7 @@ import { join } from 'path'
 import { writeFileSync } from 'fs'
 import plugin from '../src/index'
 
-let originFile = join(__dirname, 'origin', 'test.jsx')
+let originFile = join(__dirname, 'origin', 'input.jsx')
 let outputFile = join(__dirname, 'output', 'output.js')
 
 let outputText = transformFileSync(originFile, {

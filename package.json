@@ -5,7 +5,7 @@
     "main": "lib/index.js",
     "scripts": {
         "build": "rimraf lib && babel src --out-dir lib --ignore __tests__",
-        "debug": "node --inspect-brk --require ./node_modules/babel-core/register.js ./debug/index.js",
+        "debug": "node --inspect-brk --require ./node_modules/babel-core/register.js ./debug/debug.js",
         "testalls": "babel-node node_modules/babel-istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha --no-timeouts",
         "debugalls": "mocha --require babel-core/register --require babel-polyfill --no-timeouts",
         "coveralls": "cat ./coverage/lcov.info | coveralls"
@@ -47,14 +47,11 @@
     },
     "babel": {
         "presets": [
-            [
-                "env",
-                {
-                    "targets": {
-                        "node": "current"
-                    }
+            ["env", {
+                "targets": {
+                    "node": "current"
                 }
-            ]
+            }]
         ]
     },
     "files": [
