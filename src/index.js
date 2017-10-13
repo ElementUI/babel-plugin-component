@@ -1,1 +1,1 @@
-export default require('./core')('antd');
+export default require('./core').default('antd')
