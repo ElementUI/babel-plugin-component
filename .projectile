@@ -14,4 +14,3 @@
 -/.*.dll$
 -/node_modules
 -/coverage
--/test
