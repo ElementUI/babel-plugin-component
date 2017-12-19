@@ -7,7 +7,10 @@
 ## Install
 
 ```shell
-npm install babel-plugin-component --save-dev
+npm i babel-plugin-component -D
+
+# For babel6
+npm i babel-plugin-component@0 -D
 ```
 
 ## Example
