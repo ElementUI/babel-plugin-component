@@ -27,7 +27,7 @@ export default function (defaultLibraryName) {
         if (Array.isArray(opts)) {
           options = opts.find(option =>
             moduleArr[methodName] === option.libraryName ||
-            libraryObjs[methodName] === option.libraryName
+                                      libraryObjs[methodName] === option.libraryName
           ); // eslint-disable-line
         }
         options = options || opts;
@@ -73,16 +73,16 @@ export default function (defaultLibraryName) {
           if (!cachePath[libraryName]) {
             const themeName = styleLibraryName.replace(/^~/, '');
             cachePath[libraryName] = styleLibraryName.indexOf('~') === 0
-              ? resolve(process.cwd(), themeName)
-              : `${libraryName}/${libDir}/${themeName}`;
+                                   ? resolve(process.cwd(), themeName)
+                                   : `${libraryName}/${libDir}/${themeName}`;
           }
 
           if (libraryObjs[methodName]) {
             /* istanbul ingore next */
             if (cache[libraryName] === 2) {
               throw Error('[babel-plugin-component] If you are using both' +
-                'on-demand and importing all, make sure to invoke the' +
-                ' importing all first.');
+                          'on-demand and importing all, make sure to invoke the' +
+                          ' importing all first.');
             }
             if (styleRoot) {
               path = `${cachePath[libraryName]}${styleRoot}.css`;
@@ -134,7 +134,9 @@ export default function (defaultLibraryName) {
 
     function buildDeclaratorHandler(node, prop, path, opts) {
       const { file } = path.hub;
-      if (!types.isIdentifier(node[prop])) return;
+
+      if (!types.isIdentifier(node[prop]) && !types.isJSXIdentifier(node[prop])) return
+
       if (specified[node[prop].name]) {
         node[prop] = importMethod(node[prop].name, file, opts); // eslint-disable-line
       }
@@ -234,6 +236,16 @@ export default function (defaultLibraryName) {
         VariableDeclarator(path, { opts }) {
           const { node } = path;
           buildDeclaratorHandler(node, 'init', path, opts);
+        },
+
+        JSXOpeningElement(path, { opts }) {
+          const { node } = path
+          buildDeclaratorHandler(node, 'name', path, opts)
+        },
+
+        JSXClosingElement(path, { opts }) {
+          const { node } = path
+          buildDeclaratorHandler(node, 'name', path, opts)
         },
 
         LogicalExpression(path, { opts }) {

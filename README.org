@@ -1,0 +1,5 @@
+* TEST
+istanbul -> macha -> "./test/index-test.js" -> babel + plugin("./src/index.js") -> debugcase
+* DEBUG
+test/index-test.js" -> babel + plugin("./src/index.js") -> debugcase
+
