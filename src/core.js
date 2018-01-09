@@ -47,6 +47,7 @@ module.exports = function core(defaultLibraryName) {
         let modulePathTpl;
         let styleRoot;
         let mixin = false;
+        let ext = options.ext || '.css';
 
         if (root) {
           _root = `/${root}`;
@@ -86,9 +87,9 @@ module.exports = function core(defaultLibraryName) {
                 ' importing all first.');
             }
             if (styleRoot) {
-              path = `${cachePath[libraryName]}${styleRoot}.css`;
+              path = `${cachePath[libraryName]}${styleRoot}${ext}`;
             } else {
-              path = `${cachePath[libraryName]}${_root || '/index'}.css`;
+              path = `${cachePath[libraryName]}${_root || '/index'}${ext}`;
             }
             cache[libraryName] = 1;
           } else {
@@ -99,13 +100,13 @@ module.exports = function core(defaultLibraryName) {
                 const modulePath = modulePathTpl.replace(/\[module]/ig, parsedMethodName);
                 path = `${cachePath[libraryName]}/${modulePath}`;
               } else {
-                path = `${cachePath[libraryName]}/${parsedMethodName}.css`;
+                path = `${cachePath[libraryName]}/${parsedMethodName}${ext}`;
               }
               if (mixin && !isExist(path)) {
-                path = style === true ? `${_path}/style.css` : `${_path}/${style}`;
+                path = style === true ? `${_path}/style${ext}` : `${_path}/${style}`;
               }
               if (isBaseStyle) {
-                addSideEffect(file.path, `${cachePath[libraryName]}/base.css`);
+                addSideEffect(file.path, `${cachePath[libraryName]}/base${ext}`);
               }
               cache[libraryName] = 2;
             }
@@ -114,7 +115,7 @@ module.exports = function core(defaultLibraryName) {
           addDefault(file.path, path, { nameHint: methodName });
         } else {
           if (style === true) {
-            addSideEffect(file.path, `${path}/style.css`);
+            addSideEffect(file.path, `${path}/style${ext}`);
           } else if (style) {
             addSideEffect(file.path, `${path}/${style}`);
           }
