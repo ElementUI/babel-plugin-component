@@ -137,3 +137,4 @@ or
 - `["component", { "libDir": "lib" }]`: lib directory
 - `["component", { "root": "index" }]`: main file dir
 - `["component", { "camel2Dash": false }]`: whether parse name to dash mode or not, default `true`
+- `["component", { "ext": ".less" }]`: style file extension, default '.css'
