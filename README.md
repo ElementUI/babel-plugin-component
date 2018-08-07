@@ -137,3 +137,4 @@ or
 - `["component", { "libDir": "lib" }]`: lib directory
 - `["component", { "root": "index" }]`: main file dir
 - `["component", { "camel2Dash": false }]`: whether parse name to dash mode or not, default `true`
+- `["component", { exclusions: ["Lazyload"]}]` exclude component that without css file
