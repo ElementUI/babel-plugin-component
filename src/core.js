@@ -40,6 +40,7 @@ module.exports = function core(defaultLibraryName) {
           styleLibrary,
           root = '',
           camel2Dash = true,
+          exclusions = [],
         } = options;
         let styleLibraryName = options.styleLibraryName;
         let _root = root;
@@ -48,6 +49,7 @@ module.exports = function core(defaultLibraryName) {
         let styleRoot;
         let mixin = false;
         const ext = options.ext || '.css';
+        const shouldImportCss = !!exclusions.findIndex((exclusion) => exclusion === methodName);
 
         if (root) {
           _root = `/${root}`;
@@ -71,6 +73,7 @@ module.exports = function core(defaultLibraryName) {
           mixin = styleLibrary.mixin;
           styleRoot = styleLibrary.root;
         }
+        if (!shouldImportCss) return selectedMethods[methodName];
         if (styleLibraryName) {
           if (!cachePath[libraryName]) {
             const themeName = styleLibraryName.replace(/^~/, '');

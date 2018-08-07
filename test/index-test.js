@@ -133,6 +133,15 @@ describe('index', () => {
         }];
       }
 
+      if (caseName === 'exclusions') {
+        cssPlugin = [plugin, {
+          libraryName: 'vant',
+          styleLibraryName: 'vant-css',
+          exclusions: ['Button'],
+          style: true,
+        }];
+      }
+
       const actual = transformFileSync(actualFile, {
         presets: ['@babel/react'],
         plugins: cssPlugin && Array.isArray(cssPlugin[1]) ? cssPlugin : [cssPlugin || plugin],
