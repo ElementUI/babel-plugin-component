@@ -49,8 +49,8 @@ module.exports = function core(defaultLibraryName) {
         let styleRoot;
         let mixin = false;
         const ext = options.ext || '.css';
-        const shouldImportCss = !!exclusions.findIndex((exclusion) => exclusion === methodName);
-
+        const index = exclusions.findIndex((exclusion) => exclusion === methodName);
+        const shouldImportCss = !(index > -1);
         if (root) {
           _root = `/${root}`;
         }

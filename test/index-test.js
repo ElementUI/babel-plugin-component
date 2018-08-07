@@ -137,7 +137,7 @@ describe('index', () => {
         cssPlugin = [plugin, {
           libraryName: 'vant',
           styleLibraryName: 'vant-css',
-          exclusions: ['Button'],
+          exclusions: ['Lazyload', 'TabbarItem'],
           style: true,
         }];
       }

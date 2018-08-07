@@ -1,7 +1,7 @@
-import { message } from 'vant';
-import { Button } from 'vant';
 
-message('xxx');
-ReactDOM.render(<div>
-  <Button>xxxx</Button>
-</div>);
+import Vue from 'vue'
+
+import { TabbarItem, Lazyload } from 'vant'
+
+Vue.use(Lazyload)
+Vue.use(TabbarItem)

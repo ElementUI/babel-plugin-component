@@ -1,13 +1,13 @@
-// require("element-ui/lib/button/style.css");
+"use strict";
 
-var _Button = _interopRequireDefault(require("vant/lib/button")).default;
+var _tabbarItem = _interopRequireDefault(require("vant/lib/tabbar-item"));
 
-require("element-ui/lib/message/style.css");
+var _lazyload = _interopRequireDefault(require("vant/lib/lazyload"));
 
-var _message = _interopRequireDefault(require("vant/lib/message")).default;
+var _vue = _interopRequireDefault(require("vue"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_message('xxx');
+_vue.default.use(_lazyload.default);
 
-ReactDOM.render(React.createElement("div", null, React.createElement(_Button, null, "xxxx")));
+_vue.default.use(_tabbarItem.default);
