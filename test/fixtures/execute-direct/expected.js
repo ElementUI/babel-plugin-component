@@ -1,7 +1,9 @@
+"use strict";
+
 require("element-ui/lib/message/style.css");
 
-var _message = _interopRequireDefault(require("element-ui/lib/message")).default;
+var _message2 = _interopRequireDefault(require("element-ui/lib/message"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-_message('xxx');
+(0, _message2["default"])('xxx');

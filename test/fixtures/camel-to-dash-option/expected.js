@@ -1,7 +1,9 @@
+"use strict";
+
 require("antd/lib/inputNumber/style.css");
 
-var _inputNumber = _interopRequireDefault(require("antd/lib/inputNumber")).default;
+var _inputNumber2 = _interopRequireDefault(require("antd/lib/inputNumber"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-console.log(_inputNumber);
+console.log(_inputNumber2["default"]);

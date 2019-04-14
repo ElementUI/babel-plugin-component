@@ -1,7 +1,9 @@
+"use strict";
+
 require("element-ui/lib/input-number/style.css");
 
-var _InputNumber = _interopRequireDefault(require("element-ui/lib/input-number")).default;
+var _inputNumber = _interopRequireDefault(require("element-ui/lib/input-number"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-React.createElement(_InputNumber, null);
+React.createElement(_inputNumber["default"], null);

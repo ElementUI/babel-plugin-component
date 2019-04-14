@@ -1,7 +1,9 @@
+"use strict";
+
 require("element-ui/lib/modal/style.css");
 
-var _Modal2 = _interopRequireDefault(require("element-ui/lib/modal")).default;
+var _modal = _interopRequireDefault(require("element-ui/lib/modal"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var _Modal = bind({})(_Modal2);
+var _Modal = bind({})(_modal["default"]);
