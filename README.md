@@ -54,20 +54,25 @@ Via `.babelrc` or babel-loader.
 }
 ```
 
-## Multiple Module
+## Multiple Modules
 ```javascript
 {
-  "plugins": [xxx,
-    ["component", {
-      libraryName: "antd",
-      style: true,
-    }, "antd"],
-    ["component", {
-      libraryName: "test-module",
-      style: true,
-    }, "test-module"]
-  ]
-}
+  "plugins": [
+    [
+      "component",
+      [
+        {
+          "libraryName": "antd",
+          "style": true
+        },
+        {
+          "libraryName": "test-module",
+          "style": true
+        },
+        // ...
+      ]
+    ]
+  }
 ```
 
 ### Component directory structure
