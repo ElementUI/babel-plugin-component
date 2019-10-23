@@ -77,6 +77,13 @@ describe('index', () => {
         }];
       }
 
+      if (caseName === 'import-element-ui-message-box') {
+        cssPlugin = [plugin, {
+          libraryName: 'element-ui',
+          styleLibraryName: 'theme-default',
+        }];
+      }
+
       if (caseName === 'independent-theme-package') {
         expected = expected.replace(/__theme__/g, process.cwd());
         cssPlugin = [plugin, {
