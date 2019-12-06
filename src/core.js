@@ -112,7 +112,7 @@ module.exports = function core(defaultLibraryName) {
             }
           }
 
-          addDefault(file.path, path, { nameHint: methodName });
+          addSideEffect(file.path, path, { nameHint: methodName });
         } else {
           if (style === true) {
             addSideEffect(file.path, `${path}/style${ext}`);
@@ -121,7 +121,7 @@ module.exports = function core(defaultLibraryName) {
           }
         }
       }
-      return selectedMethods[methodName];
+      return Object.assign({}, selectedMethods[methodName]);
     }
 
     function buildExpressionHandler(node, props, path, state) {
