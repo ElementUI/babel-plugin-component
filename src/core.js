@@ -83,7 +83,7 @@ module.exports = function core(defaultLibraryName) {
             /* istanbul ingore next */
             if (cache[libraryName] === 2) {
               throw Error('[babel-plugin-component] If you are using both' +
-                'on-demand and importing all, make sure to invoke the' +
+                ' on-demand and importing all, make sure to invoke the' +
                 ' importing all first.');
             }
             if (styleRoot) {
