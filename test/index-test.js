@@ -133,6 +133,13 @@ describe('index', () => {
         }];
       }
 
+      if (caseName === 'transform-commonjs') {
+        cssPlugin = [
+          [plugin], 
+          ['@babel/plugin-transform-modules-commonjs']
+        ];
+      }
+
       const actual = transformFileSync(actualFile, {
         presets: ['@babel/react'],
         plugins: cssPlugin && Array.isArray(cssPlugin[1]) ? cssPlugin : [cssPlugin || plugin],
