@@ -121,7 +121,7 @@ module.exports = function core(defaultLibraryName) {
           }
         }
       }
-      return selectedMethods[methodName];
+      return Object.assign({}, selectedMethods[methodName]);
     }
 
     function buildExpressionHandler(node, props, path, state) {
